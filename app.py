@@ -43,8 +43,10 @@ def submit():
     # Configuration email
     sender_email = os.environ.get("sender_email")
     sender_password = os.environ.get("mdps")
-    print(sender_password)
-    receiver_email = os.environ.get('reveiver_email')
+    receiver_email = os.environ.get("reveiver_email")
+
+    if not sender_email or not sender_password or not receiver_email:
+        return "Configuration email manquante", 500
 
     msg = EmailMessage()
     msg.set_content(message)

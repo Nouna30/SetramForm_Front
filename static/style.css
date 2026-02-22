@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 2;
+    color: #111827;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* HEADER styling*/
+
+.header_container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 25px 15px; /* ( haut/bas ) ( gauche/droit) */
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain; /*  pour que lel prendra la taille de son container ( elle va sa'dapter , elle ne se coupe pas ) */
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+/* boutton de langue */
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-link {
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 540;
+    text-decoration: none;
+    transition: all 0.2s;
+    color: #4b5563;
+}
+
+
+.lang-link:hover {
+    color: #111827;
+}
+
+.lang-link.active {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+
+/* FORM styling */
+.main{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 3rem 1rem;
+}
+
+.form_container{
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+}
+
+.subtitle{
+    color: #4b5563;
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.input_section{
+    display: grid;
+    /* veut dre on va cree chauqe colone va etre de min de 25px et max 1fraction 9 le rest sera divse equitablemnt entre eux */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.form_field{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+
+label .required {
+    color: #dc2626;
+}
+
+input, select {
+    width: 100%;
+    outline: none;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+
+
+/* IMAGE section */
+.photo_container {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.photo_title {
+    font-weight: 490;
+    color: #374151;
+    margin-bottom: 10px;
+}
+
+.photo_image {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hint {
+    font-size: 10px;
+    color: #6b7280;
+}
+
+.file::file-selector-button {
+    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #f3f4f6;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.file::file-selector-button:hover {
+    background-color: #e5e7eb;
+}
+/* SUBMIT section */
+
+.submit_container {
+    padding-top: 15px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #111827;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact_info {
+    margin-top: 20px;
+    padding: 13px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+
+
+.contact_info a {
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ;
+}
+
+.contact_info a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+
+
+/*Responsiveness du grid*/
+@media (min-width: 1400px) {
+    .form_field {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .form_field{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
