@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulaire Demande Abonnement DOU - Student Submission Form</title>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
         
@@ -31,7 +31,7 @@
         <div class="form_container">
             <p class="subtitle">Veuillez remplir tous les champs obligatoires marqués d'un astérisque (*)</p>
             
-            <form id="submission-form" action="" method="POST">
+            <form id="submission-form" method="POST" action="/submit" enctype="multipart/form-data">
                 <input type="hidden" autocomplete="off">        
                 <div class="input_section">
                     <div class="form_field">
@@ -48,22 +48,43 @@
                         </label>
                         <input type="text" id="last_name" name="last_name" value="" required="" class="" placeholder="Nom">
                      </div>
+                    <div class="form_field">
+                        <label for="username">
+                            Nom d'utilisateur <span class="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            required
+                            placeholder="Nom d'utilisateur">
+                    </div>
 
+                    <div class="form_field">
+                        <label for="password">
+                            Mot de passe <span class="required">*</span>
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            placeholder="Mot de passe">
+                    </div>
                     
                     <div class="form_field">
                         <label for="email">
                             Adresse e-mail <span class="required">*</span>
                         </label>
                         <input type="email" id="email" name="email" value="" required="" class="" placeholder="example@email.com">
-                                    </div>
+                    </div>
 
-                    
                     <div class="form_field">
                         <label for="matricule">
                             Matricule (sans année du bac au début) <span class="required">*</span>
                         </label>
                         <input type="text" id="matricule" name="matricule" value="" required="" class="" placeholder="Sans année du bac au début">
-                                    </div>
+                    </div>
 
                     
                     <div class="form_field">
@@ -79,8 +100,7 @@
                             Numéro de téléphone <span class="required">*</span>
                         </label>
                         <input type="tel" id="phone_number" name="phone_number" value="" required="" class="" placeholder="0512345678">
-                                    </div>
-
+                    </div>
                     
                     <div class="form_field">
                         <label for="university">
