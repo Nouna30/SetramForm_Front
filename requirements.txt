@@ -6,7 +6,6 @@ amqp==5.3.1
 asgiref==3.8.1
 asttokens==3.0.1
 attrs==25.4.0
-audioop-lts==0.2.2
 billiard==4.2.1
 blinker==1.9.0
 cachetools==6.2.6
